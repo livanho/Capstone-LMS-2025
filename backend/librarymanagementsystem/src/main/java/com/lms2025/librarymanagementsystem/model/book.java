@@ -3,7 +3,8 @@ package com.lms2025.librarymanagementsystem.model;
 import jakarta.persistence.*;
 
 @Entity
-public class book {
+@Table(name = "books")
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,5 +44,4 @@ public class book {
 
     public boolean isAvailable() { return available; }
     public void setAvailable(boolean available) { this.available = available; }
-    
 }

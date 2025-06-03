@@ -3,7 +3,8 @@ package com.lms2025.librarymanagementsystem.model;
 import jakarta.persistence.*;
 
 @Entity
-public class user {
+@Table(name = "users")
+public class User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +17,7 @@ public class user {
     private String password;
 
     @Column(nullable = false)
-    private String role; // e.g., "admin", "librarian", "student"
+    private String role;
 
     // Constructors
     public User() {}
@@ -39,5 +40,4 @@ public class user {
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
-    
 }
