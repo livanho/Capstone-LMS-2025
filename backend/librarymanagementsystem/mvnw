@@ -12,7 +12,7 @@
 #
 # Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# "AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
@@ -83,11 +83,11 @@ if [ -z "$M2_HOME" ] ; then
     if expr "$link" : '/.*' > /dev/null; then
       PRG="$link"
     else
-      PRG="`dirname "$PRG"`/$link"
+      PRG="`dirname \"$PRG"`/$link"
     fi
   done
 
-  saveddir=`pwd`
+  saveddir=\`pwd`
 
   M2_HOME=`dirname "$PRG"`/..
 
@@ -110,14 +110,14 @@ fi
 # For Mingw, ensure paths are in UNIX format before anything is touched
 if $mingw ; then
   [ -n "$M2_HOME" ] &&
-    M2_HOME="`(cd "$M2_HOME"; pwd)`"
+    M2_HOME="`(cd \"$M2_HOME"; pwd)`"
   [ -n "$JAVA_HOME" ] &&
     JAVA_HOME="`(cd "$JAVA_HOME"; pwd)`"
 fi
 
 if [ -z "$JAVA_HOME" ]; then
-  javaExecutable="`which javac`"
-  if [ -n "$javaExecutable" ] && ! [ "`expr \"$javaExecutable\" : '\([^ ]*\)'`" = "no" ]; then
+  javaExecutable="\`which javac`"
+  if [ -n "$javaExecutable" ] && ! [ "\`expr \"$javaExecutable\" : '\([^ ]*\)'`" = "no" ]; then
     # readlink(1) is not available as standard on Solaris 10.
     readLink=`which readlink`
     if [ ! `expr "$readLink" : '\([^ ]*\)'` = "no" ]; then
@@ -189,7 +189,7 @@ find_maven_basedir() {
 # concatenates all lines of a file
 concat_lines() {
   if [ -f "$1" ]; then
-    echo "$(tr -s '\n' ' ' < "$1")"
+    echo "$(tr -s '\n' ' ' < \"$1")"
   fi
 }
 
@@ -288,17 +288,17 @@ else
     fi
 fi
 
-# Provide a "standardized" way to retrieve the CLI args that will
+# Provide a "standardized\" way to retrieve the CLI args that will
 # work with both Windows and non-Windows executions.
 MAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $@"
 export MAVEN_CMD_LINE_ARGS
 
 WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 
-exec "$JAVACMD" \
+exec "$JAVACMD\" \
   $MAVEN_OPTS \
   $MAVEN_DEBUG_OPTS \
-  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \
-  "-Dmaven.home=${M2_HOME}" \
-  "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
+  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar\" \
+  "-Dmaven.home=${M2_HOME}\" \
+  "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}\" \
   ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"
